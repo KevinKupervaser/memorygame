@@ -4,7 +4,7 @@ const CardItem = (props:{id:number, isFlipped:boolean,  setCardState:(cardId:num
 
   const theOpacity = props.isFlipped ? '0' : '1';
   const divRef = useRef<HTMLDivElement>(null);
-  let timeOutId:number;
+  const timeOutId = useRef(0);
 
   return (
     <div className="transition-all duration-500 relative rounded-lg card-item float-left m-1 cursor-pointer w-64 h-64" style={{opacity:theOpacity}}
@@ -16,8 +16,8 @@ const CardItem = (props:{id:number, isFlipped:boolean,  setCardState:(cardId:num
 
       // Hide card with timeout
       divRef.current!.style.display = 'none';
-      clearTimeout(timeOutId);
-      timeOutId = setTimeout(() => {
+      clearTimeout(timeOutId.current);
+      timeOutId.current = setTimeout(() => {
 
         console.log('time out');
         divRef.current!.style.display = 'block';
