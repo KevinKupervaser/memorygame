@@ -25,7 +25,7 @@ const CardItem = (props:{id:number, isFlipped:boolean,  setCardState:(cardId:num
 
     }}>
       <img src={`assets/${props.id + 1}.png`} alt="" />
-      <div ref={divRef} className="absolute top-0 left-0 w-full h-full bg-red-500"></div>
+      <div ref={divRef} className="absolute top-0 left-0 w-full h-full bg-green-500 shadow-xl"></div>
     </div>
   )
 }

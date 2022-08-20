@@ -40,7 +40,7 @@ const MemoryQuiz = (props:{clist:number[]}) => {
     ));
 
   return (
-    <div className="overflow-hidden memory-quiz mx-auto bg-gray-200 rounded-lg text-gray-900 p-4">
+    <div className="shadow-2xl overflow-hidden memory-quiz mx-auto bg-gray-200 rounded-lg text-gray-900 p-4">
       {renderedList}
     </div>
   )
